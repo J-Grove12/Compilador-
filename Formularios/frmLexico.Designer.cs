@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.txtTitle = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgToken = new System.Windows.Forms.DataGridView();
             this.Token = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vlrToken = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnClear = new System.Windows.Forms.Button();
@@ -37,7 +37,7 @@
             this.rtxtCode = new System.Windows.Forms.RichTextBox();
             this.rtbSolucion = new System.Windows.Forms.RichTextBox();
             this.btnsolucion = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgToken)).BeginInit();
             this.SuspendLayout();
             // 
             // txtTitle
@@ -51,16 +51,16 @@
             this.txtTitle.TabIndex = 0;
             this.txtTitle.Text = "ANALIZADOR LEXICO";
             // 
-            // dataGridView1
+            // dtgToken
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgToken.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgToken.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Token,
             this.vlrToken});
-            this.dataGridView1.Location = new System.Drawing.Point(529, 47);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(225, 408);
-            this.dataGridView1.TabIndex = 1;
+            this.dtgToken.Location = new System.Drawing.Point(516, 25);
+            this.dtgToken.Name = "dtgToken";
+            this.dtgToken.Size = new System.Drawing.Size(225, 408);
+            this.dtgToken.TabIndex = 1;
             // 
             // Token
             // 
@@ -102,7 +102,7 @@
             // 
             // rtbSolucion
             // 
-            this.rtbSolucion.Location = new System.Drawing.Point(25, 371);
+            this.rtbSolucion.Location = new System.Drawing.Point(12, 337);
             this.rtbSolucion.Name = "rtbSolucion";
             this.rtbSolucion.Size = new System.Drawing.Size(498, 96);
             this.rtbSolucion.TabIndex = 5;
@@ -116,23 +116,24 @@
             this.btnsolucion.TabIndex = 6;
             this.btnsolucion.Text = "Crear Solución";
             this.btnsolucion.UseVisualStyleBackColor = true;
+            this.btnsolucion.Click += new System.EventHandler(this.btnsolucion_Click);
             // 
             // frmLexico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(109)))), ((int)(((byte)(119)))));
-            this.ClientSize = new System.Drawing.Size(842, 524);
+            this.ClientSize = new System.Drawing.Size(748, 451);
             this.Controls.Add(this.btnsolucion);
             this.Controls.Add(this.rtbSolucion);
             this.Controls.Add(this.rtxtCode);
             this.Controls.Add(this.btnAnalyze);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgToken);
             this.Controls.Add(this.txtTitle);
             this.Name = "frmLexico";
             this.Text = "frmLexico";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgToken)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,7 +142,7 @@
         #endregion
 
         private System.Windows.Forms.Label txtTitle;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgToken;
         private System.Windows.Forms.DataGridViewTextBoxColumn Token;
         private System.Windows.Forms.DataGridViewTextBoxColumn vlrToken;
         private System.Windows.Forms.Button btnClear;

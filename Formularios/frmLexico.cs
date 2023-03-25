@@ -95,10 +95,10 @@ namespace Compilador.Formularios
                     if (ArrayPalabra[j] != "")
                     {
                         ArrayPalabra[j] = ArrayPalabra[j].Replace("\n", "");
-                        DataGridViewRow tabla = (DataGridViewRow)dataGridView1.Rows[0].Clone();
+                        DataGridViewRow tabla = (DataGridViewRow)dtgToken.Rows[0].Clone();
                         tabla.Cells[0].Value = ArrayPalabra[j];
                         tabla.Cells[1].Value = Diccionario(ArrayPalabra[j]);
-                        dataGridView1.Rows.Add(tabla);
+                        dtgToken.Rows.Add(tabla);
                     }
                   
 
@@ -118,8 +118,21 @@ namespace Compilador.Formularios
         {
             rtxtCode.Clear();
             rtxtCode.Focus();
+            dtgToken.Rows.Clear();
         }
 
- 
+        private void btnsolucion_Click(object sender, EventArgs e)
+        {
+            int con = dtgToken.Rows.Count;
+            int[] vec = new int[con];
+            string cadena = "";
+            for (int i = 0; i < con; i++)
+            {
+                vec[i] = Convert.ToInt32(dtgToken.Rows[i].Cells[1].Value);
+               cadena += "[ "+vec[i].ToString()+" ]";
+            }
+            rtbSolucion.Text = cadena;
+        }
+
     }
 }

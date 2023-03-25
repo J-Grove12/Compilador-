@@ -20,10 +20,7 @@ namespace Compilador
 
         private void btnLexico_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            frmLexico frmLexico = new frmLexico();
-            frmLexico.Show();
-         
+            abrirFormulariosHijos(new frmLexico());
 
         }
 
@@ -45,5 +42,25 @@ namespace Compilador
         {
             this.Close();
         }
+
+        //variable que guarda el formulario activo
+        private Form FormularioActivo = null;
+        //abrir formularios hijos
+        private void abrirFormulariosHijos(Form formularioHijo)
+        {
+            if (FormularioActivo != null)
+            {
+                FormularioActivo.Close();
+            }
+            FormularioActivo = formularioHijo;
+            formularioHijo.TopLevel = false;
+            formularioHijo.FormBorderStyle = FormBorderStyle.None;
+            formularioHijo.Dock = DockStyle.Fill;
+            pnlContenedor.Controls.Add(formularioHijo);
+            pnlContenedor.Tag = formularioHijo;
+            formularioHijo.BringToFront();
+            formularioHijo.Show();
+        }
     }
 }
+
