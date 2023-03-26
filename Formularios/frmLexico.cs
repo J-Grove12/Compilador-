@@ -22,6 +22,7 @@ namespace Compilador.Formularios
         }
          public String Diccionario(String aComparar)
         {
+         
             String token = "";
             switch (aComparar)
             {
@@ -76,6 +77,18 @@ namespace Compilador.Formularios
                 case ".":
                     token = "19";
                     break;
+                default:
+                    try
+                    {
+                        int ntempo = Int16.Parse(aComparar);
+                        token= "2";
+
+                    }
+                    catch(FormatException)
+                    {
+                        token = "1";
+                    }
+                    break;
             }
             return token;
         }
@@ -119,15 +132,17 @@ namespace Compilador.Formularios
             rtxtCode.Clear();
             rtxtCode.Focus();
             dtgToken.Rows.Clear();
+            rtbSolucion.Clear();
         }
 
         private void btnsolucion_Click(object sender, EventArgs e)
         {
-            int con = dtgToken.Rows.Count;
+            int con = (dtgToken.Rows.Count)-1;
             int[] vec = new int[con];
             string cadena = "";
             for (int i = 0; i < con; i++)
             {
+                
                 vec[i] = Convert.ToInt32(dtgToken.Rows[i].Cells[1].Value);
                cadena += "[ "+vec[i].ToString()+" ]";
             }
